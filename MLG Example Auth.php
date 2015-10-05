@@ -2,6 +2,8 @@
 
 if (session_status() === PHP_SESSION_NONE) session_start();
 
+// https://mlg.timcole.me/apps
+$KEY = ''; // Your API Key
 $SEC = ''; // Your API Secret
 
 if(isset($_GET['state'])) {
@@ -30,7 +32,7 @@ if(isset($_SESSION['mlg_id'])){
 		header('Location: /test');
 	}
 } else {
-	echo "<a onclick=\"window.open('https://mlg.timcole.me/?key=1&state=".session_id()."', '_blank', 'location=yes,width=620px,height=400px,scrollbars=yes,status=yes')\"><button>Login with MLG</button></a>";
+	echo "<a onclick=\"window.open('https://mlg.timcole.me/?key=".$KEY."&state=".session_id()."', '_blank', 'location=yes,width=620px,height=400px,scrollbars=yes,status=yes')\"><button>Login with MLG</button></a>";
 }
 
 ?>
